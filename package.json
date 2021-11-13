@@ -1,20 +1,20 @@
 {
   "name": "team-project",
   "version": "0.0.1",
-  "engines": {
-    "node": "14.x",
-    "npm": "6.x"
-  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
+    "start": "node server.js",
+    "build": "ng build",
+    "heroku-postbuild": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.0.0",
+    "@angular/cli": "~13.0.1",
+    "@angular/compiler-cli": "~13.0.0",
     "@angular/cdk": "^13.0.0",
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
@@ -32,6 +32,7 @@
     "rxjs": "~7.4.0",
     "startbootstrap-creative": "^7.0.5",
     "tslib": "^2.3.0",
+    "typescript": "~4.4.3",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -47,5 +48,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.4.3"
+  },
+  "engines": {
+    "node": "14.18.0",
+    "npm": "6.14.15"
   }
 }
